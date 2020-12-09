@@ -1,10 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <!-- header -->
+    <header class=header>
+      <div class="nav">
+        <div class="nav-logo">
+          <router-link to="/">THE BASS SHOP</router-link>
+        </div>
+        <router-link to="/new-arrivals">NEW ARRIVALS</router-link> |
+        <router-link to="/uprights">UPRIGHTS</router-link> |
+        <router-link to="/electrics">ELECTRICS</router-link> |
+        <router-link to="/bows">BOWS</router-link> |
+        <router-link to="/accessories">ACCESSORIES</router-link> 
+      </div>
+    </header>
+    <!-- end header -->
+
     <router-view/>
+
+    <!-- footer -->
+    <footer class="footer">
+      <p>Test Footer</p>
+    </footer>
+    <!-- end footer -->
   </div>
 </template>
 

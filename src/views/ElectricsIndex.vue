@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="electrics-index">
     <h1>{{ message }}</h1>
   </div>
 </template>
@@ -11,7 +11,7 @@
 export default {
   data: function() {
     return {
-      message: "Welcome to the Bass Shop!"
+      message: "Electrics!"
     };
   },
   created: function() {},
