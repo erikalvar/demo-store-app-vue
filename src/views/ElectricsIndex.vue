@@ -8,13 +8,25 @@
 </style>
 
 <script>
+import axios from "axios";
+
 export default {
   data: function() {
     return {
-      message: "Electrics!"
+      message: "Electrics!",
+      electrics: {}
     };
   },
-  created: function() {},
-  methods: {}
+  created: function() {
+    this.indexElectrics();
+  },
+  methods: {
+    indexElectrics: function() {
+      axios.get("/api/products").then((response) => {
+        console.log("All Bows:", response.data);
+        this.electrics = response.data.where;
+      });
+    }
+  }
 };
 </script>
