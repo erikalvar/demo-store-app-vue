@@ -59,7 +59,8 @@
                 </ul>
               </li>
             </ul>
-            <form class="d-flex">
+            <!-- search field -->
+            <!-- <form class="d-flex">
               <input
                 class="form-control me-2"
                 type="search"
@@ -69,7 +70,7 @@
               <button class="btn btn-outline-success" type="submit">
                 Search
               </button>
-            </form>
+            </form> -->
           </div>
         </div>
       </nav>
@@ -90,7 +91,7 @@
     <router-view />
 
     <!-- footer -->
-    <footer class="footer fixed-bottom">
+    <footer class="footer">
       <p>Test Footer</p>
     </footer>
     <!-- end footer -->
