@@ -5,7 +5,8 @@ import NewArrivals from '../views/NewArrivals.vue';
 import UprightsIndex from '../views/UprightsIndex.vue';
 import ElectricsIndex from '../views/ElectricsIndex.vue';
 import BowsIndex from '../views/BowsIndex.vue';
-import AccessoriesIndex from '../views/UprightsIndex.vue';
+import AccessoriesIndex from '../views/AccessoriesIndex.vue';
+import ProductsShow from '../views/ProductsShow.vue';
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/accessories',
     name: 'accessories-index',
     component: AccessoriesIndex
+  },
+  {
+    path: '/products/:id',
+    name: 'products-show',
+    component: ProductsShow
   },
   {
     path: '/about',

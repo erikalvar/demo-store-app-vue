@@ -1,6 +1,6 @@
 <template>
   <div class="uprights-index">
-    <h1>{{ uprights.length}}</h1>
+    <h1>{{ products.length}}</h1>
 
     <!-- hero -->
     <div class="bg-light p-5 rounded-lg m-3">
@@ -21,16 +21,18 @@
     <!-- cards -->
     <div class="container-fluid">
       <div class="row row-cols-2 row-cols-md-4 g-4" >
-      <div class="col" v-for="upright in uprights">
-        <div class="card h-100">
+      <div class="col" v-for="product in products">
+        <router-link v-bind:to="`/products/${product.id}`">
+          <div class="card h-100">
           <img src="../../public/images/kay_bass_viol_1954_01.jpg" class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="card-title">{{ upright.year  }}  {{ upright.name }} {{ upright.model }}</h5>
+            <h5 class="card-title">{{ product.year  }}  {{ product.name }} {{ product.model }}</h5>
             <p class="card-text">
-              {{ upright.price}}
+              {{ product.price}}
             </p>
           </div>
-        </div>
+          </div>
+        </router-link>
       </div>
     </div>
     </div>
@@ -47,18 +49,18 @@ export default {
   data: function () {
     return {
       message: "Uprights!",
-      uprights: [],
+      products: [],
     };
   },
   created: function () {
-    this.indexUprights();
+    this.indexProducts();
   },
   methods: {
-    indexUprights: function () {
+    indexProducts: function () {
       axios.get("/api/products").then((response) => {
         console.log("All Uprights:", response.data);
-        this.uprights = response.data.filter(
-          (upright) => upright.category === "Upright"
+        this.products = response.data.filter(
+          (product) => product.category === "Upright"
         );
       });
     },
